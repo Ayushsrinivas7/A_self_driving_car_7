@@ -4,7 +4,7 @@ class Car{
         this.y=y;
         this.width=width;
         this.height=height;
-
+        this.sensors = new Sensors(this);
         this.speed=0;
         this.acceleration=0.2;
         this.maxSpeed=3;
@@ -16,6 +16,7 @@ class Car{
 
     update(){
         this.#move();
+        this.sensors.update();
     }
 
     #move(){
@@ -70,7 +71,8 @@ class Car{
             this.height
         );
         ctx.fill();
-
+        
         ctx.restore();
+        this.sensors.draw(ctx);
     }
 }
