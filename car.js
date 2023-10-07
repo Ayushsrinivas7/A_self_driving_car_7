@@ -4,13 +4,13 @@ class Car{
         this.y=y;
         this.width=width;
         this.height=height;
-        this.sensors = new Sensors(this);
+       
         this.speed=0;
         this.acceleration=0.2;
         this.maxSpeed=3;
         this.friction=0.05;
         this.angle=0;
-
+        this.sensors = new Sensors(this);
         this.controls=new Controls();
     }
 
@@ -73,6 +73,6 @@ class Car{
         ctx.fill();
         
         ctx.restore();
-        this.sensors.draw(ctx);
+        this.sensors.draw(ctx );
     }
 }
